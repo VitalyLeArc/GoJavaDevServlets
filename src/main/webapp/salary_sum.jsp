@@ -1,20 +1,16 @@
-<%@ page import="java.math.BigDecimal" %><%--
-  Created by IntelliJ IDEA.
-  User: Yume
-  Date: 01.08.2020
-  Time: 15:53
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.math.BigDecimal" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page errorPage="error_page.jsp" %>
+
 <html>
 <head>
     <title>salarysum</title>
 </head>
 <body>
-<%@include file="header_back.jsp"%>
+<%@include file="header_back.jsp" %>
 <br/>
 sum salary = <%
-    out.println((BigDecimal)request.getAttribute("projectdevssalarysum"));
+    out.println((BigDecimal) request.getAttribute("projectdevssalarysum"));
 %>
 
 </body>

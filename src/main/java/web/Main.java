@@ -20,6 +20,7 @@ public class Main {
         //System.out.println("Список разработчиков в проекте UnrealEngine4 " + developersOfUnrealEngine4);
         //System.out.println("Сумма зп разработчиков в проекте Minecraft " + sumSalaryDevelopersOfMinecraft);
        // System.out.println(infoAllProjects);
+        //System.out.println(DeveloperService.getDeveloperService().getAllDevelopers().toString());
     }
 }
 

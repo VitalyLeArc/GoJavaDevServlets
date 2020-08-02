@@ -62,4 +62,11 @@ public class DeveloperDAO extends DAO<Developer> {
         список всех Java разработчиков;
         список всех middle разработчиков;
      */
+
+    public List<Developer> getAllDevelopers(){
+        startNewEntityManager();
+        List<Developer> developers = entityManager.createQuery("from Developer").getResultList();
+        entityManager.close();
+        return developers;
+    }
 }

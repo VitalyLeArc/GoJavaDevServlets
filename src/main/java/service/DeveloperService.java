@@ -45,4 +45,7 @@ public class DeveloperService {
         DeveloperDAO.getDeveloperDao().delete(Developer.class, id);
     }
 
+    public List<Developer> getAllDevelopers(){
+        return DeveloperDAO.getDeveloperDao().getAllDevelopers();
+    }
 }
