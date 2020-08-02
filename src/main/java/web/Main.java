@@ -21,6 +21,7 @@ public class Main {
         //System.out.println("Сумма зп разработчиков в проекте Minecraft " + sumSalaryDevelopersOfMinecraft);
        // System.out.println(infoAllProjects);
         //System.out.println(DeveloperService.getDeveloperService().getAllDevelopers().toString());
+        //DeveloperService.getDeveloperService().deleteDeveloperById(10L);
     }
 }
 

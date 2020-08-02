@@ -6,83 +6,89 @@
     <title>Main</title>
 </head>
 <body>
-<li>
-    <ul>
+<table>
+    <tr><th width="200"></th><th width="150"></th><th width="100" align="center"></th></tr>
+    <tr>
         <form action="/taskservlet/developers" method="get">
-            Enter developer's grade:
-            <input type="text" name="grade"/>
-            <input type="submit" value="Get dev list">
+            <td width="200">Enter developer's grade:</td>
+            <td width="100"><input type="text" placeholder="developer's grade" name="grade"/></td>
+            <td width="100" align="center"><input type="submit" value="Get dev list"></td>
         </form>
-    </ul>
-    <ul>
+    </tr>
+    <tr>
         <form action="/taskservlet/developers" method="get">
-            Enter developer's skill:
-            <input type="text" name="skill"/>
-            <input type="submit" value="Get dev list"/>
+            <td>Enter developer's skill:</td>
+            <td><input type="text" placeholder="developer's skill" name="skill"/></td>
+            <td align="center"><input type="submit" value="Get dev list"/></td>
         </form>
-    </ul>
-    <ul>
+    </tr>
+    <tr>
         <form action="/taskservlet/developers" method="get">
-            Enter project name:
-            <input type="text" name="projectname"/>
-            <input type="submit" value="Get dev list"/>
+            <td>Enter project name:</td>
+            <td><input type="text" placeholder="project name" name="projectname"/></td>
+            <td align="center"><input type="submit" value="Get dev list"/></td>
         </form>
-    </ul>
-    <br/>
-    <ul>
-        <form action="/taskservlet/projects" method="get">
-            Enter project name:
-            <input type="text" name="projectdevssalarysum"/>
-            <input type="submit" value="Get sum salary"/>
-        </form>
-    </ul>
-    <ul>
-        <button>
-            <a href="projects">Get all projects info</a>
-        </button>
-    </ul>
+    </tr>
+    <tr></tr>
 
-</li>
+    <tr>
+        <form action="/taskservlet/projects" method="get">
+            <td>Enter project name:</td>
+            <td><input type="text" placeholder="project name" name="projectdevssalarysum"/></td>
+            <td align="center"><input type="submit" value="Get sum salary"/></td>
+        </form>
+    </tr>
+    <tr>
+        <td><button>
+            <a href="projects">Get all projects info</a>
+        </button></td>
+    </tr>
+
+</table>
 </br>
 </br>
-CRUD Operations
-<li>
-    <ul>
+<h3>CRUD Operations</h3>
+<table>
+    <tr>
         <form action="/taskservlet/developers" method="get">
-            Enter developer id:
-            <input type="text" name="id"/>
-            <input type="submit" value="Get developer info"/>
+            <td width="200">Enter developer id:</td>
+            <td width="30"><input type="text" placeholder="id" name="id"/>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td width="70" align="center"><input type="submit" value="Get developer info"/>
         </form>
-    </ul>
-    <ul>
+    </tr>
+    <tr>
         <form action="/taskservlet/developers" method="post">
-            Enter developer`s data:
-            <input type="text" name="name"/>
-            <input type="text" name="sex"/>
-            <input type="text" name="salary"/>
-            <input type="submit" value="Add developer"/>
+            <td width="200">Enter developer`s data:</td>
+            <td width="30"></td>
+            <td width="70"><input type="text" placeholder="name" name="name"/></td>
+            <td width="70"> <input type="text" placeholder="male or female" name="sex"/></td>
+            <td width="70"> <input type="text" placeholder="salary in $" name="salary"/></td>
+            <td width="70"><input type="submit" value="Add developer"/></td>
         </form>
-    </ul>
-    <ul>
-        <form action="/taskservlet/developers" method="put">
-            Enter developer`s id and then data for change:
-            <input type="text" name="id"/>
-            <input type="text" name="name"/>
-            <input type="text" name="sex"/>
-            <input type="text" name="salary"/>
-            <input type="submit" value="Update developer"/>
+    </tr>
+    <tr>
+        <form action="/taskservlet/developers" method="post">
+            <td>Enter developer`s id and then other data for change:</td>
+            <td width="30"><input type="text" placeholder="id" name="idedit"/></td>
+            <td><input type="text" placeholder="name" name="name"/></td>
+            <td><input type="text" placeholder="male or female" name="sex"/></td>
+            <td><input type="text" placeholder="salary in $" name="salary"/></td>
+            <td><input type="submit" value="Update developer"/></td>
         </form>
-    </ul>
-    <ul>
-        <form action="/taskservlet/developers" method="delete">
-            Enter developer`s id to delete:
-            <input type="text" name="id"/>
-            <input type="submit" value="Delete developer"/>
+    </tr>
+    <tr>
+        <form action="/taskservlet/developers" method="post">
+            <td>Enter developer`s id to delete:</td>
+            <td><input type="text" placeholder="id" name="iddelete"/></td>
+            <td><input type="submit" value="Delete developer"/></td>
         </form>
-    </ul>
-<ul>
-    <button><a href="developers">Get all developers</a></button>
-</ul>
-</li>
+    </tr>
+<tr>
+    <td><button><a href="developers">Get all developers</a></button></td>
+</tr>
+</table>
 </body>
 </html>

@@ -6,8 +6,9 @@
 <head>
     <title>developer</title>
 </head>
-<br>
+<body>
 <%@include file="header_back.jsp" %>
+</br>
 Selected Developer Info
 </br>
 <table>

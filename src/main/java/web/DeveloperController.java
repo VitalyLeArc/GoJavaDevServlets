@@ -61,47 +61,50 @@ public class DeveloperController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameterMap().containsKey("name")) {
+        if(req.getParameterMap().containsKey("idedit")){
+            doPut(req,resp);
+        }
+        else if(req.getParameterMap().containsKey("iddelete")){
+            doDelete(req,resp);
+        }
+        else if (req.getParameterMap().containsKey("name")) {
             String name = req.getParameter("name");
             BigDecimal salary = BigDecimal.valueOf(Long.parseLong(req.getParameter("salary")));
             EnumSex sex = req.getParameter("sex").equals("male") ? EnumSex.MALE : EnumSex.FEMALE;
             DeveloperService.getDeveloperService()
                     .addNewDeveloper(new Developer(name, salary, sex));
             resp.sendRedirect("/taskservlet/developers");
-        } else {
+        }
+        else {
             resp.setStatus(404);
         }
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameterMap().containsKey("id")) {
-            Developer developer = DeveloperService.getDeveloperService()
-                    .getDeveloperById(Long.parseLong(req.getParameter("id")));
+           Developer developer = DeveloperService.getDeveloperService()
+                    .getDeveloperById(Long.parseLong(req.getParameter("idedit")));
             if(req.getParameter("name")!=null){
                 developer.setName(req.getParameter("name"));
             }
             if(req.getParameter("salary")!=null) {
-                developer.setSalary(BigDecimal.valueOf(Long.parseLong(req.getParameter("salary"))));
+                try {
+                    developer.setSalary(BigDecimal.valueOf(Long.parseLong(req.getParameter("salary"))));
+                }
+                catch (Exception e){
+                }
             }
             if(req.getParameter("sex")!=null){
                 developer.setSex(req.getParameter("sex").equals("male") ? EnumSex.MALE : EnumSex.FEMALE);
             }
 
             DeveloperService.getDeveloperService().updateDeveloperById(developer,developer.getId());
-        } else {
-            resp.setStatus(404);
-        }
     }
 
     @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
-        if (req.getParameterMap().containsKey("id")) {
-            Long devId = Long.parseLong(req.getParameter("id"));
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+            Long devId = Long.parseLong(req.getParameter("iddelete"));
             DeveloperService.getDeveloperService().deleteDeveloperById(devId);
-            resp.setStatus(204);
-        } else {
-            resp.setStatus(404);
-        }
+            resp.sendRedirect("/taskservlet");
     }
 }
